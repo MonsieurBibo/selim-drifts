@@ -14,4 +14,4 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         localDir: "/"
         remoteDir: "/chronica/txData/QBCoreFramework_BA9C00.base/resources/selim-drifts"
-        options: ""
+        options: -p ${{ secrets.FTP_PORT }}
