@@ -12,6 +12,6 @@ jobs:
         host: ${{ secrets.FTP_HOST }}
         user: ${{ secrets.FTP_USER }}
         password: ${{ secrets.FTP_PASSWORD }}
-        localDir:
-        remoteDir: "    remoteDir: /chronica/txData/QBCoreFramework_BA9C00.base/resources/selim-drifts # optional, default is ."
-        options: 
+        localDir: "/"
+        remoteDir: "/chronica/txData/QBCoreFramework_BA9C00.base/resources/selim-drifts"
+        options: ""
