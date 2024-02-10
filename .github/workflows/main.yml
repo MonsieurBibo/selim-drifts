@@ -4,13 +4,13 @@
   uses: sebastianpopp/ftp-action@v2.0.0
   with:
     # FTP host
-    host: chronicarp.fr:49152
+    host: $FTP_HOST
     # FTP user
-    user: root
+    user: $FTP_USER
     # FTP password
-    password: 
+    password: $FTP_PASSWORD
     # Force SSL encryption
-    forceSsl: true# optional, default is false
+    forceSsl: true # optional, default is false
     # Local directory
     localDir: # optional, default is .
     # Remote directory
