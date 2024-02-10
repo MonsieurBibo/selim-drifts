@@ -20,5 +20,5 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           port: ${{ secrets.FTP_PORT }}
-          local: './'
-          remote: '/chronica/txData/QBCoreFramework_BA9C00.base/resources/selim-drifts'
+          localPath: './'
+          remotePath: '/chronica/txData/QBCoreFramework_BA9C00.base/resources/selim-drifts'
