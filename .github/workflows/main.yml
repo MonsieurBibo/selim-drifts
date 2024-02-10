@@ -1,19 +1,24 @@
-on: [push]
+name: Deploy to SFTP
+
+on:
+  push:
+    branches:
+      - main
 
 jobs:
-    deploy_job:
+  deploy:
     runs-on: ubuntu-latest
-    name: deploy
+
     steps:
-        - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v2
-        - name: deploy file
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+
+      - name: Setup SFTP
+        uses: appleboy/sftp-action@v2
         with:
-            username: ${{ secrets.FTP_USERNAME }} 
-            server: ${{ secrets.FTP_HOST }} 
-            port : ${{ secrets.FTP_PORT }} 
-            password : ${{ secrets.FTP_PASWORD }} 
-            local_path: './*'
-            remote_path: '/chronica/txData/QBCoreFramework_BA9C00.base/resources/selim-drifts'
-            sftpArgs: '-o ConnectTimeout=5'
+          host: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: ${{ secrets.FTP_PORT }}
+          local: '/'
+          remote: '/chronica/txData/QBCoreFramework_BA9C00.base/resources/selim-drifts'
