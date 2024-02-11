@@ -8,8 +8,11 @@ version '0.0.1'
 lua54 "yes"
 
 
+shared_script {
+	'config.lua'
+}
+
 client_script {
-    "config.lua",
 	'client/main.lua'
 }
 server_script {
